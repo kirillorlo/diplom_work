@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+    
+    <h1>Добро пожаловать на сайт магазина рок-атрибутики BEHEMOTH</h1>
+    <p>Мы рады приветствовать вас! Здесь вы найдете самые лучшие товары для любителей рок-музыки!</p>
+    <img src="https://cs10.pikabu.ru/post_img/2018/09/29/7/153821765616872994.jpg" alt="Рок-атрибутика">
+    <header>
+       
+        <nav>
+                <form action="{% url 'about' %}"  target="_self">
+                    <button>О нас</button>
+                </form>
+                <form action="{% url 'lists_products' %}"  target="_self">
+                    <button>Список товаров</button>
+                </form>
+                <form action="{% url 'registration' %}"  target="_self">
+                    <button>Регистрация клиента</button>
+                </form>
+                <form action="{% url 'create_order' %}"  target="_self">
+                    <button> Оформить заказ</button>
+                </form>
+        </nav>
+        
+    </header>
+    <footer>
+        <p>&copy; 2024 Все права защищены</p>
+    </footer>
+</body>
+</html>

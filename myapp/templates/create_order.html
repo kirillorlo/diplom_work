@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Заказ</title>
+  <link rel="stylesheet" href="{% static 'css/create_order.css' %}">
+</head>
+<body>
+<h1>Сформировать заказ</h1>
+
+  <form method="post">
+    {% csrf_token %}
+    <div>
+      <label for="name">Имя:</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div>
+      <label for="phone_number">Телефон:</label>
+      <input type="text" id="phone_number" name="phone_number" required>
+    </div>
+    <div>
+      <label for="address">Адрес:</label>
+      <input type="text" id="address" name="address" required>
+    </div>
+
+    <h2>Выберите продукты:</h2>
+    {% for product in products %}
+      <div>
+        <input type="checkbox" id="product_{{ product.id }}" name="products" value="{{ product.id }}">
+        <label for="product_{{ product.id }}">{{ product.name }} - {{ product.price }} руб.</label>
+      </div>
+    {% endfor %}
+
+    <button type="submit">Оформить заказ</button>
+  </form>
+
+  <img src="https://t3.ftcdn.net/jpg/08/41/11/22/360_F_841112294_nCDJ8zyH06CVcrrey27hhkAIXLGnkBeh.jpg" alt="Рок-атрибутика">
+
+<footer>
+    <p>&copy; 2024 Все права защищены</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О нас</title>
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+</head>
+<body>
+    <h1>О нас</h1>   
+<p>Магазин рок-атрибутики отличное место для всех рок-любителей, музыкантов и тех, кто любит особенный стиль. У нас вы найдете все необходимое, чтобы выразить свою страсть к рок-музыке и создать неповторимый образ. Посетите наш магазин и погрузитесь в мир рока уже сегодня!
+Наш магазин предлагает широкий ассортимент товаров для рокеров всех возрастов и стилей.
+У нас есть все, от футболок и толстовок с принтами любимых рок-групп до аксессуаров, таких как значки, нашивки и браслеты.
+Мы также предлагаем музыкальные инструменты, такие как гитары, бас-гитары и барабанные установки.
+Наша команда увлеченных рок-фанатов всегда рада помочь вам найти то, что вы ищете.
+Мы также предлагаем скидки и акции для наших постоянных клиентов.
+</p>
+
+<nav>
+    <form action="{% url 'home' %}"  target="_self">
+        <button>Главная</button>
+    </form>
+    <form action="{% url 'lists_products' %}"  target="_self">
+        <button>Список товаров</button>
+    </form>
+    <form action="{% url 'registration' %}"  target="_self">
+        <button>Регистрация клиента</button>
+    </form>
+</nav>
+<img src="https://img.freepik.com/fotos-premium/musica-death-metal-arte-fantasmas-arte-terror-ilustracion-heavy-metal-esqueleto-guitarra-ai_833503-114.jpg?w=360">
+
+<footer>
+    <p>&copy; 2024 Все права защищены</p>
+</footer>
+</body>
+</html>

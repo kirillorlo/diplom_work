@@ -1,0 +1,28 @@
+
+{% for product in products %}
+    <div>
+        <h2>{{ product.name }}</h2>
+        <button type="button" onclick="showDescription(this.getAttribute('data-target'))" data-target="{{ product.id }}">Подробнее</button>
+        <div id="{{ product.id }}" class="description" style="display: none;">
+            <p>{{ product.description }}</p>
+            <p>Цена: {{ product.price }}</p>
+        </div>
+    </div>
+{% endfor %}
+
+<script>
+function showDescription(targetId) {
+    var element = document.getElementById(targetId);
+    if (element.style.display === "none") {
+        element.style.display = "block";
+    } else {
+        element.style.display = "none";
+    }
+}
+</script>
+<br>
+<nav>
+    <form action="{% url 'home' %}"  target="_self">
+        <button>Главная</button>
+    </form>
+</nav>
